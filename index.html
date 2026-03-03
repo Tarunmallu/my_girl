@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Dear Kavana </title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Montserrat:wght@300;400;700&display=swap');
+
+        :root {
+            --primary-color: #ffffff;
+            --secondary-color: #aaaaaa;
+            --background-color: #121212;
+            --accent-color: #ff6b6b;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: radial-gradient(circle at 20% 20%, #3a3a6a, #1b1b2f 40%, #0f0f1a 70%, #000000 100%);
+            color: var(--primary-color);
+            overflow-x: hidden;
+
+        }
+
+        .container {
+            width: 100%;
+            overflow-y: scroll;
+            scroll-snap-type: y mandatory;
+            height: 100vh;
+        }
+
+        section {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+            padding: 0 5%;
+            scroll-snap-align: start;
+            position: relative;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1.5s ease, transform 1.5s ease;
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .hero h1 {
+            font-family: 'Alex Brush', cursive;
+            font-size: 8rem;
+            font-weight: 400;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            text-shadow: 0 0 25px rgba(255,255,255,0.3);
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        .message h2 {
+            font-size: 3rem;
+            margin-bottom: 2rem;
+            color: var(--primary-color);
+        }
+
+        .message p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            max-width: 800px;
+            color: var(--primary-color);
+        }
+
+        .interactive-section {
+            cursor: pointer;
+        }
+
+        .hidden-message {
+            display: none;
+            margin-top: 2rem;
+            font-style: italic;
+            color: var(--accent-color);
+        }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .gallery-item {
+            width: 300px;
+            height: 400px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+
+        .final-wish h2 {
+            font-family: 'Alex Brush', cursive;
+            font-size: 6rem;
+            color: var(--accent-color);
+        }
+
+        /* Scroll down arrow */
+        .scroll-down {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+        }
+
+        .scroll-down svg {
+            width: 30px;
+            height: 30px;
+            fill: var(--primary-color);
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-30px);
+            }
+            60% {
+                transform: translateY(-15px);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 5rem;
+            }
+            .message h2 {
+                font-size: 2rem;
+            }
+            .final-wish h2 {
+                font-size: 4rem;
+            }
+        }
+/* Soft moving light glow */
+body::before {
+    content: "";
+    position: fixed;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.05), transparent 60%);
+    animation: moveLight 15s linear infinite;
+    pointer-events: none;
+    z-index: 0;
+}
+
+@keyframes moveLight {
+    0% { transform: translate(-25%, -25%); }
+    50% { transform: translate(-30%, -30%); }
+    100% { transform: translate(-25%, -25%); }
+}
+    </style>
+</head>
+<body>
+<div class="particles"></div>
+<div class="container">
+
+    <section class="hero visible">
+        <h1>Happy Birthday</h1>
+        <p> kavana </p>
+        <div class="scroll-down">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 21l-12-12h5v-9h14v9h5z"/></svg>
+        </div>
+    </section>
+
+    <section class="message">
+        <h2>heyyy buddy...</h2>
+        <p>On this special day, I wanted to take a moment to celebrate you. Your kindness, laughter, and the way you light up a room are just a few of the things that make you so incredible. Wishing you a day filled with all the joy you deserve.</p>
+    </section>
+
+    <section class="message interactive-section" onclick="revealMessage()">
+        <h2>Look at you?</h2>
+        <p>How beautiful you are , u think that you are mad , but am mad on ur beauty!.</p>
+        <p class="hidden-message" id="hiddenMessage">
+You walked into my life and somehow made everything brighter, softer, and more beautiful than I ever imagined 💛
+</p>
+    </section>
+
+    <section>
+        <h2>A Few of My Favorite Moments</h2>
+        <div class="gallery">
+    <div class="gallery-item" style="background-image: url('IMG_1102.jpg');"></div>
+    <div class="gallery-item" style="background-image: url('IMG_1126.jpg');"></div>
+        </div>
+    </section>
+
+    <section class="final-wish">
+        <h2>With all my love,</h2>
+        <p> tarun </p>
+    </section>
+
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const sections = document.querySelectorAll('section');
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    });
+
+    function revealMessage() {
+    const hiddenMessage = document.getElementById('hiddenMessage');
+    
+    if (hiddenMessage.style.display === "block") {
+        hiddenMessage.style.display = "none";
+    } else {
+        hiddenMessage.style.display = "block";
+    }
+}
+    
+</script>
+<audio id="bgMusic" loop>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+document.body.addEventListener("click", function() {
+    document.getElementById("bgMusic").play();
+}, { once: true });
+</script>
+</body>
+</html>
